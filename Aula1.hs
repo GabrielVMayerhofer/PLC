@@ -10,6 +10,11 @@ maxi a b
   | a > b = a
   | otherwise = b
 
+mini :: Int -> Int -> Int
+mini a b  
+  | a < b = a
+  | otherwise = b
+
 vendas :: Int -> Int
 vendas 0 = 200
 vendas 1 = 400
@@ -55,6 +60,7 @@ sqrSum3 :: Int -> Int -> Int
 sqrSum3 a b = let sq z = z * z
                in sq a + sq b
 
+--exercicios
 maxThreeOccurs :: Int -> Int -> Int -> (Int, Int)
 maxThreeOccurs m n p = (mx, eqCount)
   where mx = maxiThree m n p
@@ -68,3 +74,17 @@ equalCount m n p mx
   | m == mx && n == mx && p == mx = 3
   | m == mx && n == mx || m == mx && n == mx || n == mx && p == mx = 2
   | otherwise = 1
+
+--exercicio 2
+primo :: Int -> Bool
+primo n = dividindo (n-1)
+        where dividindo 1 = True
+              dividindo x | mod n x /= 0 = dividindo (x-1)
+                          | otherwise = False
+
+--exercicio 3
+primoSi :: Int -> Int -> Bool
+primoSi n m = dividindo (min n m)
+            where dividindo 1 = True
+                  dividindo x | mod n x == 0 && mod m x == 0 = False
+                              | otherwise = dividindo(x-1)
