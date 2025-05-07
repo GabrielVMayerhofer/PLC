@@ -1,0 +1,2 @@
+answer :: Bool
+answer = True
