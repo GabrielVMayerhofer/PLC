@@ -15,6 +15,9 @@ mini a b
   | a < b = a
   | otherwise = b
 
+allEqual :: Int -> Int -> Int -> Bool
+allEqual n m p = (n == m) && (m == p)
+
 vendas :: Int -> Int
 vendas 0 = 200
 vendas 1 = 400
@@ -88,3 +91,12 @@ primoSi n m = dividindo (min n m)
             where dividindo 1 = True
                   dividindo x | mod n x == 0 && mod m x == 0 = False
                               | otherwise = dividindo(x-1)
+
+--exercicio 4
+fatorial :: Int -> Int
+fatorial n | n == 0 = 1
+           | otherwise = n * fatorial (n - 1)
+
+--exercicio 5
+all4Equal :: Int -> Int -> Int -> Int -> Bool
+all4Equal a b c d = allEqual a b c && allEqual b c d
