@@ -1,16 +1,17 @@
-maquinaSomar :: [Int] -> [Int] 
-maquinaSomar = somar 0
+maquinaSomar :: [Int] -> [Int]
+maquinaSomar [] = []
+maquinaSomar [x] = []
+maquinaSomar (x:y:xs) = somador 0 (x:y:xs)
   where
-    somar acc [] 
-      | acc /= 0  = [acc]
+    somador acc [] = []
+    somador acc [x]
+      | x == 0    = [acc | acc /= 0]
       | otherwise = []
-    somar acc (0:0:_) 
-      | acc /= 0  = [acc]
-      | otherwise = []
-    somar acc (0:xs) 
-      | acc /= 0  = acc : somar 0 xs
-      | otherwise = somar 0 xs
-    somar acc (x:xs) = somar (acc + x) xs
+    somador acc (x:y:xs)
+      | x == 0 && y == 0 = [acc | acc /= 0]
+      | x == 0           = [acc | acc /= 0] ++ somador 0 (y:xs)
+      | otherwise        = somador (acc + x) (y:xs)
+
 
 main = do
        lista <- getLine
