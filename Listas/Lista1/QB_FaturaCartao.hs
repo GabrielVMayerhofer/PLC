@@ -17,16 +17,12 @@ matchMesPrice [a] = []
 matchMesPrice (x:y:xs) = (((words x) !! 1), (read y :: Double)) : matchMesPrice xs
 
 logMes :: String -> String -> Double
-logMes mes fatura = formatar (somador (matchMesPrice (separarMesPrice (dividirStr "" fatura))) mes)
-  where
-    somador [] _ = 0
-    somador ((m, p):xs) mes
-      | m == mes = p + somador xs mes
-      | otherwise = somador xs mes
-    formatar x = fromIntegral (round (x * 100)) / 100
+logMes mes fatura = foldl (\acc (m, p) -> if m == mes then acc + p else acc) 0 (matchMesPrice (separarMesPrice (dividirStr "" fatura)))
 
 main = do
     a <- getLine
     b <- getLine
     let result = logMes a b
     print result
+
+--JAN = 89.4; FEV = 15.44; MAR = 73.89; ABR = 23.5
