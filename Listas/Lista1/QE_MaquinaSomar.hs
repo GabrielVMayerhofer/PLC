@@ -1,16 +1,16 @@
 maquinaSomar :: [Int] -> [Int]
-maquinaSomar = somador 0
+maquinaSomar = somador 0 False
   where
-    somador acc [] 
-      | acc /= 0  = [acc]
+    somador acc started [] 
+      | started = [acc]
       | otherwise = []
-    somador acc (0:0:_) 
-      | acc /= 0  = [acc]
+    somador acc started (0:0:_) 
+      | started = [acc]
       | otherwise = []
-    somador acc (0:xs) 
-      | acc /= 0  = acc : somador 0 xs
-      | otherwise = somador 0 xs
-    somador acc (x:xs) = somador (acc + x) xs
+    somador acc started (0:xs)
+      | started = acc : somador 0 False xs
+      | otherwise = somador 0 False xs
+    somador acc started (x:xs) = somador (acc + x) True xs
 
 -- maquinaSomar xs = somar 0 xs
 --   where
