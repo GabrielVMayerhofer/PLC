@@ -19,6 +19,10 @@ matchMesPrice (x:y:xs) = (((words x) !! 1), (read y :: Double)) : matchMesPrice 
 logMes :: String -> String -> Double
 logMes mes fatura = foldl (\acc (m, p) -> if m == mes then acc + p else acc) 0 (matchMesPrice (separarMesPrice (dividirStr "" fatura)))
 
+-- teste usando composicao de funcoes
+logMes2 :: String -> String -> Double
+logMes2 mes fatura = (foldl (\acc (m,p) -> if m == mes then acc + p else acc) 0 . matchMesPrice . separarMesPrice . dividirStr "") fatura
+
 main = do
     a <- getLine
     b <- getLine
