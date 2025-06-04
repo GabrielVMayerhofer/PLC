@@ -1,4 +1,4 @@
-# Paradigmas de Linguagens de Programação — 2025.1 (CIn/UFPE) - Gabriel Valença Mayerhofer <gvm>
+# Paradigmas de Linguagens de Programação — 2025.1 (CIn/UFPE) - Gabriel Valença Mayerhofer &lt;gvm&gt;
 
 Este repositório contém **anotações, resumos e códigos práticos** desenvolvidos durante as aulas da disciplina **Paradigmas de Linguagens de Computação (PLC)**, ofertada no semestre **2025.1** no **Centro de Informática (CIn) da UFPE**.
 
@@ -20,18 +20,20 @@ O objetivo é reunir material de apoio, experimentos e exemplos dos diferentes p
   - Listas de exercícios
 
  ## Organização
+```
  📦 PLC
 ┣ 📂 Aulas
-┃ ┣ 📜 Aula1.hs
-┃ ┣ 📜 Aula2.hs
-┃ ┣ 📜 Aula3.hs
+┃ ┣ 📜 Aula1
+┃ ┣ 📜 Aula2
+┃ ┣ 📜 Aula3
 ┃ ┗ ...
 ┣ 📂 Listas
 ┃ ┣ 📂 Lista1
-┃ ┃ ┣ 📜 Questao1.hs
-┃ ┃ ┣ 📜 Questao1.hs
-┃ ┃ ┣ 📜 Questao1.hs
+┃ ┃ ┣ 📜 Questao1
+┃ ┃ ┣ 📜 Questao2
+┃ ┃ ┣ 📜 Questao3
 ┃ ┃ ┗ ...
 ┃ ┣ 📂 Lista2
 ┃ ┗ ...
 ┣ 📜 README.md
+```
