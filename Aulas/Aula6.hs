@@ -44,3 +44,40 @@ eval :: Expr -> Int
 eval (Lit n) = n
 eval (Add e1 e2) = (eval e1) + (eval e2)
 eval (Sub e1 e2) = (eval e1) - (eval e2)
+
+showExpr :: Expr -> String
+showExpr (Lit n) = show n
+showExpr (Add e1 e2) = "(" ++ (showExpr e1) ++ "+" ++ (showExpr e2) ++ ")"
+showExpr (Sub e1 e2) = "(" ++ (showExpr e1) ++ "-" ++ (showExpr e2) ++ ")"
+
+
+data Pairs t = Pair t t
+-- Pair 6 8 :: Pairs Int
+-- Pair True True :: Pairs Bool
+-- Pair [] [1,3] :: Pair [Int]
+
+data List t = Nil | Cons t (List t)
+  deriving(Show)
+data Tree t = NilT | Node t (Tree t) (Tree t)
+  deriving (Show)
+
+-- exercicio
+toList :: List t -> [t]
+toList (Nil) = []
+toList (Cons x xs) = x : toList xs
+
+fromList :: [t] -> List t
+fromList [] = Nil
+fromList (x:xs) = Cons x (fromList xs)
+
+depth :: Tree t -> Int
+depth (NilT) = 0
+depth (Node a t1 t2) = 1 + max (depth t1) (depth t2)
+
+collapse :: Tree t -> [t]
+collapse (NilT) = []
+collapse (Node a t1 t2) = [a] ++ collapse t1 ++ collapse t2 
+
+mapTree :: (t -> u) -> Tree t -> Tree u
+mapTree f NilT = NilT
+mapTree f (Node a t1 t2) = Node (f a) (mapTree f t1) (mapTree f t2)
