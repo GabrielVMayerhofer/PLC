@@ -1,19 +1,29 @@
 data Animal = Cisnal | Iguanoide | Narvale | Null
   deriving (Eq, Show)
 
+trasformar :: [Animal] -> [Int]
+transformar [] = []
+transformar xs = foldr (\x accC accI accN -> case xs of Cisnal -> accC + 1
+                                                        Iguanoide -> accI + 1
+                                                        Narvale -> accN + 1
+                                                        _ -> ) (0,0,0) xs
+
+contar :: Float -> [Animal]
+contar indicador = case indicador of
+  indicador >= 0.1 && indicador <= 0.3 -> [Cisnal] 
+  indicador >= 0.4 && indicador <= 0.7 -> [Iguanoide] 
+  indicador >= 0.8 -> [Narvale] 
+  otherwise -> [Null] 
+
 indice :: String -> String -> Float
 indice [] _ = 0
 indice _ [] = 0
-indice firstE secondE = div (foldl (\acc (x,y) -> if x == y then acc + 1 else acc) 0 (zip firstE secondE)) (max (length firstE) (length secondE))
+indice firstE secondE = div (foldl (\acc (indicador,y) -> if indicador == y then acc + 1 else acc) 0 (zip firstE secondE)) (max (length firstE) (length secondE))
 
 dna2 :: [String] -> [String] -> [Int]
 dna2 _ [] = []
 dna2 [] _ = []
-dna2 (first:xs) (second:ys) = case indice first second of
-  x >= 0.1 && x <= 0.3 -> Cisnal : indice xs ys
-  x >= 0.4 && x <= 0.7 -> Iguanoide : indice xs ys
-  x >= 0.8 -> Narvale : indice xs ys
-  otherwise -> Null : indice xs ys
+dna2 xs ys = 
 
 main = do
   firstExtract <- words <$> getLine                       -- equivalente a (read firstExtract :: [String])

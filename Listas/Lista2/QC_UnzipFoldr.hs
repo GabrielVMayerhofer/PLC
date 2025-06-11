@@ -4,8 +4,6 @@
 --  where
 --    (as, bs) = unzip xs 
 
-
-
 unzip' :: [(a,b)] -> ([a],[b])
 unzip' = foldr (\(a,b) (as,bs) -> (a:as,b:bs)) ([],[])
 
