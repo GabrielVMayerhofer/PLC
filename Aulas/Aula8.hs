@@ -5,7 +5,7 @@ check0 :: [Int] -> Int -> Bool -> [Int]
 check0 [] _ _ = []
 check0 (x:xs) somador addCheck
   | x == 0 = check0 xs (somador+1) True
-  | x /= 0 && addCheck == True = 0:somador:check0 (x:xs) 0 False
+  | x /= 0 && addCheck == True = 0 : somador : check0 (x:xs) 0 False
   | otherwise = x : check0 xs 0 False
 
 rlencode0 :: [Int] -> [Int]
@@ -68,3 +68,37 @@ rldecodeLetrasCodigo [] = []
 rldecodeLetrasCodigo (x:xs) = case x of
   Unica letra -> [letra] ++ rldecodeLetrasCodigo xs
   Repetida letra vezes -> reletrar letra vezes ++ rldecodeLetrasCodigo xs
+
+--mais exercicios
+fibonacci :: [Int]
+fibonacci = somaFibo 0 1
+  where somaFibo a b = a : somaFibo b (a+b)
+
+merge :: Ord t => [t] -> [t] -> [t]
+merge [] ys = ys
+merge xs [] = xs
+merge (x:xs) (y:ys) 
+  | y < x = y : merge (x:xs) ys
+  | otherwise = x : merge xs (y:ys)
+
+type Pilha t = [t]
+data Elemento = Valor Int | Soma | Multiplica
+  deriving (Show)
+
+exemploPilhaElem :: Pilha Elemento
+exemploPilhaElem = [Valor 10, Valor 20, Soma, Valor 30, Multiplica]
+-- exemplo de uso: gera_string exemploPilhaElem ——> "((10+20)*30)"
+
+gera_string :: Pilha Elemento -> String
+gera_string [] = []
+gera_string (x:y:xs) = case (x,y) of
+    (Valor n, Soma) -> "+" ++ show n ++ ")" ++ gera_string xs
+    (Valor n, Multiplica) -> "*" ++ show n ++ ")" ++ gera_string xs
+    (Valor n, Valor z) -> "(" ++ show n ++ gera_string (y:xs)
+
+-- exemplo de uso: calcula exemploPilhaElem ——> 900
+calcula :: Pilha Elemento -> Int
+calcula [Valor x] = x
+calcula (x:y:z:xs) = case (x,y,z) of
+  (Valor a, Valor b, Soma) -> calcula ([Valor (a+b)] ++ xs)
+  (Valor a, Valor b, Multiplica) -> calcula ([Valor (a*b)] ++ xs)
