@@ -38,5 +38,5 @@ O objetivo é reunir material de apoio, experimentos e exemplos dos diferentes p
 ┃ ┃ ┗ ...
 ┃ ┣ 📂 Lista2
 ┃ ┗ ...
-┣ 📜 README.md
+┗ 📜 README.md
 ```
