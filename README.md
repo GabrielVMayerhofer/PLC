@@ -23,17 +23,20 @@ O objetivo é reunir material de apoio, experimentos e exemplos dos diferentes p
 ```
  📦 PLC
 ┣ 📂 Aulas
-┃ ┣ 📜 Aula1
-┃ ┣ 📜 Aula2
-┃ ┣ 📜 Aula3
-┃ ┗ ...
+┃ ┣ 🟪 Haskell
+┃ ┃ ┣ 📜 Aula1
+┃ ┃ ┣ 📜 Aula2
+┃ ┃ ┗ ...
+┃ ┣ ☕ Java
+┃ ┃ ┣ 📜 Aula1
+┃ ┃ ┣ 📜 Aula2
+┃ ┃ ┗ ...
 ┣ 📂 Listas
 ┃ ┣ 📂 Lista1
 ┃ ┃ ┣ 📜 Questao1
 ┃ ┃ ┣ 📜 Questao2
-┃ ┃ ┣ 📜 Questao3
 ┃ ┃ ┗ ...
 ┃ ┣ 📂 Lista2
 ┃ ┗ ...
-┣ 📜 README.md
+┗ 📜 README.md
 ```
