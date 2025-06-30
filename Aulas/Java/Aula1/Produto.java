@@ -1,9 +1,13 @@
-package Aulas.Java.Aula1;
-
 public class Produto {
   private String descricao;
   private double valor;
   private int estoque;
+
+  public Produto(String newDescricao, double newValor){
+    descricao = newDescricao;
+    valor = newValor;
+    estoque = 0;
+  }
 
   public String lerDescricao(){
     return descricao;
@@ -17,6 +21,10 @@ public class Produto {
     return estoque;
   }
 
+  public void updateDescricao(String newDescricao){
+    descricao = newDescricao;
+  }
+
   public void updateValor(double newValor){
     valor = newValor;
   }
@@ -28,4 +36,6 @@ public class Produto {
   public void reestocou(int qntEstocou){
     estoque = estoque + qntEstocou;
   }
+
+  
 }

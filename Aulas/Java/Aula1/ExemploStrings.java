@@ -1,5 +1,3 @@
-package Aulas.Java.Aula1;
-
 public class ExemploStrings {
   public static void main(String[] args) {
     String s1 = "ricardo";
