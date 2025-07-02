@@ -28,8 +28,11 @@ O objetivo é reunir material de apoio, experimentos e exemplos dos diferentes p
 ┃ ┃ ┣ 📜 Aula2
 ┃ ┃ ┗ ...
 ┃ ┣ ☕ Java
-┃ ┃ ┣ 📜 Aula1
-┃ ┃ ┣ 📜 Aula2
+┃ ┃ ┣ 📂 Aula1
+┃ ┃ ┃ ┣ 📜 Arq1
+┃ ┃ ┃ ┣ 📜 Arq2
+┃ ┃ ┃ ┗ ...
+┃ ┃ ┣ 📂 Aula2
 ┃ ┃ ┗ ...
 ┣ 📂 Listas
 ┃ ┣ 📂 Lista1
