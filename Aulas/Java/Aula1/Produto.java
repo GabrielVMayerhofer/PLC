@@ -37,5 +37,17 @@ public class Produto {
     estoque = estoque + qntEstocou;
   }
 
-  
+  public static void main(String[] args){
+    Produto c = new Produto("Sabonete", 24.54);
+    System.out.println("Produto: "+c.lerDescricao());
+    System.out.println("Preço: "+c.checarValor());
+    System.out.println("Estoque: "+c.checarEstoque());
+    c.updateDescricao("Sabonete - O Melhor");
+    c.updateValor(15.65);
+    c.reestocou(8);
+    System.out.println();
+    System.out.println("Produto: "+c.lerDescricao());
+    System.out.println("Preço: "+c.checarValor());
+    System.out.println("Estoque: "+c.checarEstoque());
+  }
 }

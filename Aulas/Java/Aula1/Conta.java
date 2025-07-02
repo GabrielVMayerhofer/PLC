@@ -11,7 +11,6 @@ public class Conta {
 
   public Conta(String numConta){
     numero = numConta;
-    saldo = 0;
   }
 
   public void creditar(double valor) {
