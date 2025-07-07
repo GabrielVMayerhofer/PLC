@@ -19,16 +19,26 @@ public class Banco{
     int i = 0;
     boolean achou = false;
     Conta resposta = null;
-    while (i < indice && !achou){
+    // while (i < indice && !achou){
+    //   if(numero.equals(contas[i].getNumero())){
+    //     resposta = contas[i];
+    //     achou = true;
+    //   } else {i = i + 1;}
+    // }
+    // if(!achou){
+    //   throw new RuntimeException("Conta nao encontrada");
+    // }
+    for(i = 0; i < indice; i++){
       if(numero.equals(contas[i].getNumero())){
         resposta = contas[i];
         achou = true;
-      } else {i = i + 1;}
+      }
     }
-    if(!achou){
+    if(achou){
+      return resposta;
+    }else{
       throw new RuntimeException("Conta nao encontrada");
     }
-    return resposta;
   }
 
   public void creditar(String numero, double valor){
