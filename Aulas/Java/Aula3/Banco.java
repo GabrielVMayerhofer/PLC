@@ -19,15 +19,7 @@ public class Banco{
     int i = 0;
     boolean achou = false;
     Conta resposta = null;
-    // while (i < indice && !achou){
-    //   if(numero.equals(contas[i].getNumero())){
-    //     resposta = contas[i];
-    //     achou = true;
-    //   } else {i = i + 1;}
-    // }
-    // if(!achou){
-    //   throw new RuntimeException("Conta nao encontrada");
-    // }
+
     for(i = 0; i < indice; i++){
       if(numero.equals(contas[i].getNumero())){
         resposta = contas[i];
@@ -51,8 +43,45 @@ public class Banco{
     c.debitar(valor);
   }
 
+  public void renderJuros(String numero, double valor){
+    Conta c = acharConta(numero);
+    if(c instanceof Poupanca)
+      ((Poupanca) c).renderJuros(valor);
+    else
+      throw new RuntimeException("Operacao invalida");
+  }
+
+  public double getBonus(String numero){
+    Conta c = acharConta(numero);
+    if(c instanceof ContaEspecial)
+      return ((ContaEspecial) c).getBonus();
+    else
+      throw new RuntimeException("Operacao invalida");
+  }
+
+  public void renderBonus(String numero){
+    Conta c = acharConta(numero);
+    if(c instanceof ContaEspecial)
+      ((ContaEspecial) c).renderBonus();
+    else
+      throw new RuntimeException("Operacao invalida");
+  }
+
+  public boolean checkConta(String numero){
+    Conta c = acharConta(numero);
+    if(c instanceof Poupanca)
+      return false;
+    else
+      return true;
+  }
+
   public double getSaldo(String numero){
     Conta c = acharConta(numero);
     return c.getSaldo();
-  } 
+  }
+
+  public void transferir(String contaOrigem, String contaDestino, double valor){
+    debitar(contaOrigem, valor);
+    creditar(contaDestino, valor);
+  }
 }
