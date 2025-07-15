@@ -1,32 +1,9 @@
-// nome do arquivo = nome da classe
-
-public class Conta {
-  private String numero;
-  private double saldo;
-
-  public Conta(String numConta, double numSaldo){
-    numero = numConta;
-    saldo = numSaldo;
-  }
-
+public class Conta extends ContaAbstrata{
   public Conta(String numConta){
-    numero = numConta;
-  }
-
-  public void creditar(double valor) {
-    saldo = saldo + valor;
+    super(numConta);
   }
 
   public void debitar(double valor) {
-    saldo = saldo - valor;
+    super.setSaldo(this.getSaldo() - valor);
   }
-
-  public double getSaldo() {
-    return saldo;
-  }
-  
-  public String getNumero() {
-    return numero;
-  }
-
 }

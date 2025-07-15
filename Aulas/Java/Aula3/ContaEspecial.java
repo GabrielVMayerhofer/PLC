@@ -21,7 +21,7 @@ public class ContaEspecial extends Conta {
     bonus = bonus + (valor * 0.01);
   }
 
-  public static void main(String[] args){
+  // public static void main(String[] args){
     // ContaEspecial c = new ContaEspecial("we");
     // c.creditar(200);
     // System.out.println(c.getSaldo());
@@ -30,5 +30,5 @@ public class ContaEspecial extends Conta {
     // c.debitar(100);
     // System.out.println(c.getSaldo());
     // System.out.println(c.getBonus());
-  }
+  // }
 }

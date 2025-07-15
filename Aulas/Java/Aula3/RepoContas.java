@@ -1,4 +1,4 @@
-public interface RepoContas{
+public interface RepoContas {
   void inserir(ContaAbstrata conta);
   ContaAbstrata procurar(String numero);
   void remover(String numero);
