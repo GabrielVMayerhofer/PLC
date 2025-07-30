@@ -1,5 +1,5 @@
 1. 
-Classe1 a  = new Classe1 -- y = 8 | x = 5 = 7 = 3
+Classe1 a = new Classe1 -- y = 8 | x = 5 = 7 = 3
 Classe1 b = new Classe2 -- y = 4 | x = 7 = 3
 Classe2 c = new Classe2 -- y = 6 | x = 3
 
