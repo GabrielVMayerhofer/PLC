@@ -24,7 +24,46 @@ b.function = 9
 |-------------------------------|
 
 3.
-´´´
+a)
+public class TestaFila{
+  public static void main(String args[]){
+    Fila <String> fs = new Fila<>();
+    fs.insere("abc");
+    fs.insere("def");
 
+    Fila <Double> fdouble = new Fila<>();
+    fdouble.insere(3.0);
+    fdouble.insere(2.5);
+  }
+}
 
-´´´
+b)
+public class ExceptionFV extends Exception{
+  public ExceptionFV(){
+    super("Fila vazia");
+  }
+}
+
+public class Fila<T> {
+  private T[] dados;
+  private int primeiro, ultimo;
+
+  public Fila() {
+    dados = (T[]) new Object[100];
+    primeiro = 0;
+    ultimo = 0;
+  }
+
+  public void insere(T valor) {
+    dados[ultimo++] = valor;
+  }
+
+  public T remove() throws ExceptionFV {
+    if (primeiro == ultimo){
+      throw new ExeptionFV
+    }
+    return dados[primeiro++];
+  }
+}
+
+4. Igual o da prova de 2022-1
