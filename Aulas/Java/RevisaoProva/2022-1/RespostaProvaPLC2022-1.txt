@@ -1,17 +1,11 @@
-1. a)
-- Variáveis de instância: y
-- Variáveis de classe: x
+1. 
+a) (b) -- Variáveis de instância: y -- Variáveis de classe: x
 
-1. b)
-- Métodos de instância: methodTwo
-- Métodos de classe: methodOne
+b) (b) -- Métodos de instância: methodTwo -- Métodos de classe: methodOne
 
-2. (a)
-- Variável de classe é a mesma para todas as instâncias
+2. (a) -- Variável de classe é a mesma para todas as instâncias
 
-3. (a)
-
-4. (d)
+3. (d)
 - students -> array [ | | | | | | | | | ]
 - studentName -> "Peter Parker"
 - students[0] -> "Peter Parker" -- [->"PP"| | | | | | | | | ]
@@ -21,9 +15,12 @@
   - students -> array
   - students[0] -> "Peter Parker"
 
-1. 
+4. (b)
 
+5. 
+´´´
 public abstract class Forma {
+
     public double PosicaoX, PosicaoY;
 
     public abstract double area();
@@ -35,6 +32,7 @@ public abstract class Forma {
 }
 
 public class Circulo extends Forma {
+
     public double raio;
 
     public Circulo(double raio) {
@@ -47,6 +45,7 @@ public class Circulo extends Forma {
 }
 
 public class Retangulo extends Forma {
+
     public double lado1, lado2;
 
     public Retangulo(double lado1, double lado2) {
@@ -58,3 +57,4 @@ public class Retangulo extends Forma {
         return lado1 * lado2;
     }
 }
+´´´
