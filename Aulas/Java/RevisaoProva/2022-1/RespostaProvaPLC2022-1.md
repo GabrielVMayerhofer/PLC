@@ -1,22 +1,34 @@
 1. 
-a) (b) -- Variáveis de instância: y -- Variáveis de classe: x
-b) (b) -- Métodos de instância: methodTwo -- Métodos de classe: methodOne
+a) (b) -- Variáveis de instância: y -- Variáveis de classe: x  
+b) (b) -- Métodos de instância: methodTwo -- Métodos de classe: methodOne  
 
-2. (a) -- Variável de classe é a mesma para todas as instâncias
+---
+
+2.
+(a) -- Variável de classe é a mesma para todas as instâncias
+
+---
 
 3. (d)
-- students -> array [ | | | | | | | | | ]
-- studentName -> "Peter Parker"
-- students[0] -> "Peter Parker" -- [->"PP"| | | | | | | | | ]
-- studentName -> null (perde a referência)
-  
-- Resultado final: 2 referências
-  - students -> array
-  - students[0] -> "Peter Parker"
+```
+- students -> array [ | | | | | | | | | ]  
+- studentName -> "Peter Parker"  
+- students[0] -> "Peter Parker" -- [->"PP"| | | | | | | | | ]  
+- studentName -> null (perde a referência)  
+    
+Resultado final: 2 referências  
+  - students -> array  
+  - students[0] -> "Peter Parker"  
+```
+
+---
 
 4. (b)
 
+---
+
 5. 
+```java
 public abstract class Forma {
     public double PosicaoX, PosicaoY;
     public abstract double area();
@@ -51,3 +63,4 @@ public class Retangulo extends Forma {
         return lado1 * lado2;
     }
 }
+```
